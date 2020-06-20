@@ -1,0 +1,71 @@
+.main-container
+{
+    display: flex;
+    padding: 20px;
+}
+
+.header
+{
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.or
+{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.sketch-container {
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+  }
+
+  .select-file
+  {
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 100%;
+  }
+
+  .margin
+  {
+      justify-content: flex-end;
+      align-self: flex-end;
+  }
+
+  .image-container
+  {
+    width: 150px;
+    height: 150px;
+  }
+
+  .medium
+  {
+      margin-top: 100px;
+      text-align: end;
+  }
+
+  hr
+  {
+    align-self: flex-start;
+    width: 150px;
+  }
+
+  .clear
+  {
+    text-align: center;
+  }
+
+  .left
+  {
+    text-align: center;   
+  }
+
+  .spinner
+  {
+    margin-left: 100px;
+  }

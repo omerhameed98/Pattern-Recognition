@@ -1,0 +1,61 @@
+<div class="header">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Pattern Recognition</h1>
+            <p class="lead">Sketch Based Image Retrieval System</p>
+            <p class="lead">Click on the "Choose File" button to upload a file OR Draw a sketch below</p>
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div  class="col-sm-5">
+                <div class="select-file">
+                    <mat-card>
+                        <label>Select File (only image or pdf)</label>
+                        <div>
+                            <input type="file" (change)="selectFile($event)" />
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="or">OR </div>
+                <div #screen class="sketch-container">
+                    <div id="sketch-holder"></div>
+                </div>
+                <div class="clear">
+                    <button type="button" class="btn btn-dark" (click)="Clear()">Clear Skectch</button>
+                    <button type="button" class="btn btn-dark" (click)="Capture()" style="margin-left: 10px;">Capture</button>
+                </div>
+            </div>
+            <div class="col-sm-2 medium">
+                <button *ngIf="!this.Loading && !this.Refresh" type="button" class="btn btn-success" (click)="Process()">Process</button>
+                <button *ngIf="this.Refresh" type="button" class="btn btn-info" (click)="_Refresh()">Retry</button>
+                <div class="spinner">
+                    <mat-spinner [diameter]="35" *ngIf="this.Loading"></mat-spinner>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="column">
+                    <div class="left">
+                        <div *ngIf="!this.Result">
+                            <img src="./../assets/photo.png">
+                        </div>
+                        <div *ngIf="this.Result">
+                            <div *ngFor="let image of images">
+                                <img class="image-container" [src]="image">
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="download">
+    <img #canvas>
+    <a #downloadLink></a>
+</div>

@@ -1,0 +1,25 @@
+.picture
+{
+    width: 800px;
+    height: 250px;
+    border-radius: 4px;
+    box-shadow: 5px 10px #f8f9fa;
+}
+.container
+{
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-title {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+.about-description {
+    font-size: 1.1rem;
+    color: #999;
+  }
