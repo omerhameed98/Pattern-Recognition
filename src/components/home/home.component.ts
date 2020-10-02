@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     {
         const sketch = s => {
             s.setup = () => {
-              const canvas2 = s.createCanvas(420, 500);
+              const canvas2 = s.createCanvas(256, 256);
               // creating a reference to the div here positions it so you can put things above and below
               // where the sketch is displayed
               canvas2.parent('sketch-holder');
@@ -101,7 +101,7 @@ export class HomeComponent implements OnInit {
         Process()
         { 
           this.Loading = true;
-          html2canvas(this.screen.nativeElement, {width: 500, height:1200}).then(canvas => {
+          html2canvas(this.screen.nativeElement, {width: 256, height:256}).then(canvas => {
             this.sketch = canvas.toDataURL();
           });
 
@@ -139,7 +139,7 @@ export class HomeComponent implements OnInit {
 
         Capture()
         {
-          html2canvas(this.screen.nativeElement, {width: 500, height:1200}).then(canvas => {
+          html2canvas(this.screen.nativeElement, {width: 256, height:256}).then(canvas => {
             this.canvas.nativeElement.src = canvas.toDataURL();
             this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
             this.downloadLink.nativeElement.download = 'sketch.png';
